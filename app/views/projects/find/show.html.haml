@@ -1,0 +1,16 @@
+%div.find-ref-holder
+  = render 'shared/ref_switcher', destination: 'find', path: @path
+%div#find-holder.find-holder
+  %ul.breadcrumb
+    %li
+      %i.icon-angle-right
+      = link_to project_tree_path(@project, @ref) do
+        = @project.path
+      &frasl;
+      %input.find-field{type: "text", name: "query", autocomplete: "off", spellcheck: "false", autofocus: "" }
+  %div#find-content-holder.find-content-holder
+    %table#find-slider{class: "table_#{@hex_path} find-table" }
+      %thead
+        %tr
+          %th Name
+      = render partial: 'projects/find/blob_item', collection: @blobs, locals: {type: 'file'}

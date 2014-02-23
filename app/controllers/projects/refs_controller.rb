@@ -11,6 +11,8 @@ class Projects::RefsController < Projects::ApplicationController
       format.html do
         new_path = if params[:destination] == "tree"
                      project_tree_path(@project, (@id))
+                   elsif params[:destination] == "find"
+                     project_find_path(@project, (@id))
                    elsif params[:destination] == "blob"
                      project_blob_path(@project, (@id))
                    elsif params[:destination] == "graph"

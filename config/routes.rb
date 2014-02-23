@@ -182,6 +182,7 @@ Gitlab::Application.routes.draw do
     end
 
     scope module: :projects do
+      resources :find,      only: [:show], constraints: {id: /.+/, format: /(html|js)/ }
       resources :blob,      only: [:show, :destroy], constraints: {id: /.+/}
       resources :raw,       only: [:show], constraints: {id: /.+/}
       resources :tree,      only: [:show], constraints: {id: /.+/, format: /(html|js)/ }

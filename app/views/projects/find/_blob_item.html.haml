@@ -1,0 +1,5 @@
+%tr{ class: "find-item #{tree_hex_class(blob_item)}" }
+  %td.find-item-file-name
+    = tree_icon(type)
+    %span.str-truncated
+      = link_to "#{blob_item.root}#{blob_item.name}", project_blob_path(@project, tree_join(@id || @commit.id, "#{blob_item.root}#{blob_item.name}"))

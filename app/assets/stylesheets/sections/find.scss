@@ -1,0 +1,94 @@
+.find-holder {
+  .find-content-holder {
+    float: left;
+    width: 100%;
+  }
+
+  .find_progress {
+    display: none;
+    margin: 20px;
+    &.loading {
+      display: block;
+    }
+  }
+
+  .find-field {
+    position: relative;
+    top: 1px;
+    border: 0;
+    padding: 0;
+    outline: none;
+    box-shadow: none;
+    min-height: 0;
+    height: 22px;
+    line-height: 1px;
+    vertical-align: top;
+    -webkit-appearance: none;
+  }
+
+  .find-table {
+    @extend .table;
+    @include border-radius(0);
+
+    tr {
+      td, th {
+        padding: 8px 10px;
+        line-height: 20px;
+      }
+      th {
+        font-weight: normal;
+        font-size: 15px;
+        border-bottom: 1px solid #CCC !important;
+      }
+      td {
+        border-color: #F1F1F1 !important;
+      }
+      &:hover {
+        td {
+          background: $hover;
+          border-top: 1px solid #ADF;
+          border-bottom: 1px solid #ADF;
+        }
+        cursor: pointer;
+      }
+      &.selected {
+        td {
+          background: #f5f5f5;
+          border-top: 1px solid #EEE;
+          border-bottom: 1px solid #EEE;
+        }
+      }
+    }
+  }
+
+  .find-item {
+    .find-item-file-name {
+      max-width: 320px;
+      vertical-align: middle;
+      a {
+        &:hover {
+          color: $primary_color;
+        }
+      }
+
+      img {
+        position: relative;
+        top:-1px;
+      }
+    }
+  }
+}
+
+.find-btn-group {
+  top: 2px;
+
+  .btn {
+    margin-right: 0px;
+    padding: 2px 10px;
+  }
+}
+
+.find-ref-holder {
+  float: left;
+  margin-top: 8px;
+}
